@@ -1,4 +1,5 @@
-from http.server import *
+# from http.server import *
+from http.server import HTTPServer, ThreadingHTTPServer, BaseHTTPRequestHandler
 
 host = 'localhost'
 port = 5555
@@ -22,7 +23,7 @@ class TestServer(BaseHTTPRequestHandler):
         self.wfile.write('<h1>PUT request received!</h1>'.encode())
 
 if __name__ == '__main__': 
-    server = HTTPServer((host, port), TestServer) 
+    server = ThreadingHTTPServer((host, port), TestServer) 
     print(f'Server running on port {port}')
 
     try:
