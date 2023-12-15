@@ -10,3 +10,9 @@ Record load test results for a server that simulates a "gacha system" used in on
 
 ## Technical Specification:
 This will be implemented in Python to utilize Python's multithreading, allowing the server to handle more requests.
+
+## How To Run:
+1. cd test/
+2. Run `locust` and navigate to the link `Starting web interface at http://localhost:XXXX`
+3. In a seperate terminal run `python3 test_server.py`
+4. Enter number of users and spawn rate. Use http://localhost:5555 for the host field.
