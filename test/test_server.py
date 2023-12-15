@@ -1,5 +1,4 @@
-# from http.server import *
-from http.server import HTTPServer, ThreadingHTTPServer, BaseHTTPRequestHandler
+from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 
 host = 'localhost'
 port = 5555
@@ -8,7 +7,7 @@ class TestServer(BaseHTTPRequestHandler):
         self.send_response(200) 
         self.send_header('content-type', 'text/html') 
         self.end_headers() 
-        self.wfile.write('<h1>Hello, world!</h1>'.encode())
+        self.wfile.write('<h1>GET request recieved!</h1>'.encode())
 
     def do_POST(self):
         self.send_response(200)
